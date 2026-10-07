@@ -16,7 +16,8 @@ def mathsInterpreter():
     # Store user input into multiple variables
     # by splitting the string
     x, y, z = (input("What is your expression?\n")).split()
-    
+
+    # If else flow control
     if y == "+" :
         add = int(x) + int(z)
         return add
