@@ -46,3 +46,43 @@ could currently do it.
 
 **Meal time**
 The firs one I had to look up an answer to as I was a bit thrown by the main name == main. Glad to have hopefully worked that confusion out for future
+
+
+## Problem set 2
+
+**camelCase**
+Good practice for mutating strings. I'd forgotten how utilisise empty variables.
+Need some guidance, initally ran into enummerate, and whilst I covered it on my course I didn't really end up using it. Chosen to go with the logic I currently comprehend. A nice for loop.  
+
+**Coke Machine**
+
+
+**Vanity Plates**
+
+
+**Nutrition facts**
+
+
+**Twttr**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

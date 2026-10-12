@@ -15,6 +15,22 @@ def coke_vending_machine():
     # Initialise amount due variable
     amount_due = f"Amount due: {(coke_cost - inserted_coin)}"
 
-    return amount_due
+    # Storing the user input
+    user_input = int(input("Insert Coin: "))
+
+    if user_input == 25:
+        inserted_coin = inserted_coin + user_input
+        print(amount_due)
+    elif user_input == 10:
+        inserted_coin = inserted_coin + user_input
+        print(amount_due)
+    elif user_input == 5:
+        inserted_coin = inserted_coin + user_input
+        print(amount_due)
+
+
+
+
+ 
 
 print(coke_vending_machine())
