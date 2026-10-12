@@ -55,7 +55,8 @@ Good practice for mutating strings. I'd forgotten how utilisise empty variables.
 Need some guidance, initally ran into enummerate, and whilst I covered it on my course I didn't really end up using it. Chosen to go with the logic I currently comprehend. A nice for loop.  
 
 **Coke Machine**
-
+I forgot about while and had a wonky kinda elif loop. I looked up how to work the logic and was essentially told to
+use while and when I went back to the video it was the first section... Must've missed it. I'd already seen the asnwer in the process, wah wah. Learnt.
 
 **Vanity Plates**
 
