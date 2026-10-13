@@ -63,7 +63,8 @@ Needed help with the for loop logic at the and. I've done my own commenting over
 "how much work" should be going into logic solving. Good speed bump. 
 
 **Nutrition facts**
-
+Had to double check my dictionary key value calling logic but I knew what I
+wanted to do with this one.
 
 **Twttr**
 
