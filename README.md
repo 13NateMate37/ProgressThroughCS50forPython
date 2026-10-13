@@ -67,7 +67,7 @@ Had to double check my dictionary key value calling logic but I knew what I
 wanted to do with this one.
 
 **Twttr**
-
+This one was rather simple. I did mix up .append() and += however.
 
 
 
