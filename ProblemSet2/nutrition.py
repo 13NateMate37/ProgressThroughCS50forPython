@@ -25,8 +25,9 @@ def main():
 
 def fruits_calories(fruit: str):
 
-    # ** it is checked against this list, **
+    # ** it is checked against this dictionary, **
     fruits_list = {
+        # key: value 
         "apple": 130, 
         "banana": 110, 
         "grapes": 90,
