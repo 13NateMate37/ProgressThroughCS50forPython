@@ -59,7 +59,8 @@ I forgot about while and had a wonky kinda elif loop. I looked up how to work th
 use while and when I went back to the video it was the first section... Must've missed it. I'd already seen the asnwer in the process, wah wah. Learnt.
 
 **Vanity Plates**
-
+Needed help with the for loop logic at the and. I've done my own commenting over the logic flow to help solidify my own understanding. Currently I think I'm misjudging
+"how much work" should be going into logic solving. Good speed bump. 
 
 **Nutrition facts**
 
