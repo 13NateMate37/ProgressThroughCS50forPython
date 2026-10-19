@@ -10,6 +10,49 @@ If, though, X or Y is not an integer, X is greater than Y, or Y is 0, instead pr
 the user again. (It is not necessary for Y to be 4.) Be sure to catch any exceptions
 like ValueError or ZeroDivisionError.
 """
+def main():
+    # Establising a loop 
+    while True:
+        # Setting loop conditions to validate user input
+        try:
+            # Capturing input as a str and then splitting it 
+            x, y = str(input("Please give a proper fraction as X/Y: \n")).split(sep='/')
+            # Type casting the variables to int for comparison 
+            x = int(x)
+            y= int(y)
+            # Comparison checks
+            if x < 0 or y <= 0 or x > y:
+                # Should cause a loop if aby of these conditions are True
+                continue
+            else:
+                # As long as they are all false, main calls fractionToPercent,
+                # and breaks the loop after printing
+                print(fractionToPercent(x,y))
+                break
+        # Catch incorrect values for the type cast 
+        except ValueError:
+            # If met, pass over it abd reprompt
+            pass
 
-def fractionToPercent():
+
+def fractionToPercent(x:int, y:int):
+    # Making a fraction into a percentage
+    # Establishing try/except for ZeroDivisionErrors
+    try:
+        percentage = round(x / y * 100)
+    except ZeroDivisionError:
+         return "Cannot Divide By Zero"
+
+    # Checking value for output parametrs    
+    if percentage <= 1:
+        return "E"
+    elif percentage >= 99:
+        return "F"
+    else:
+        return f"{percentage}%"
+
+
+main()
+
     
+

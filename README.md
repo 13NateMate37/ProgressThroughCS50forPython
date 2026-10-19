@@ -73,7 +73,8 @@ This one was rather simple. I did mix up .append() and += however.
 ## Problem set 3
 
 **Fuel Gauge**
-  
+A nice logic flow challenge. I was overthinking the first half and was 
+putting the print call in the wrong place.
 
 **Felipe's Taqueria**
 
