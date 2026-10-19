@@ -70,6 +70,20 @@ wanted to do with this one.
 This one was rather simple. I did mix up .append() and += however.
 
 
+## Problem set 3
+
+**Fuel Gauge**
+  
+
+**Felipe's Taqueria**
+
+
+**Grocercy List**
+
+
+**Outdated**
+
+
 
 
 
