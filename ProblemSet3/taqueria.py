@@ -21,23 +21,29 @@ menu = {
 def main():
     # Initialsing empty variable
     total: float = 0.00
+    # Customer info print statements
     print("Welcome to Felipe’s Taqueria!")
     print("Here's our menu,")
-    while True:
-        try:
-            for item, price in menu.items():
-                print(f"{item}: {price}")
-            print("\n")
-            order_item = input("What would you like to order?\n")
+    # print formatting for appearance
+    for item, price in menu.items():
+        print(f"{item}: {price}")
 
+    # Starting the loop
+    while True:
+        # Decision fork in try/except block
+        try:
+            # Storing user input
+            order_item = input("What would you like to order?\n")
+            # Storing the funciton call's return value
             price = orderCheck(order_item)
-            
+            # Condistional logic to add reutnr value to total variable
             if price is not None:
                 total += price
-                print(f"Order Total: ${total:.2f}")
-
+                print(f"Order Total: ${total:.2f}\n")
+        # End Of File Error clause to exit loop 
         except EOFError:
-            return f"${total:.2f}"
+            print(f"Your order total is:\n ${total:.2f}")
+            break
 
 
 def orderCheck(ordered_item: str):

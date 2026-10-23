@@ -77,7 +77,8 @@ A nice logic flow challenge. I was overthinking the first half and was
 putting the print call in the wrong place.
 
 **Felipe's Taqueria**
-
+Starting to get the hang of using While and try for input looping. Slowly
+absorbing the practice.
 
 **Grocercy List**
 
