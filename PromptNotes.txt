@@ -55,13 +55,22 @@ To get both each key and its value, use the dictionary’s .items() method:
 
 
 
+Q: How should i go about adapting this part then?
+ if orderCheck(order_item):
+                total + orderCheck(order_item) 
+                print(f"Order Total: ${total:.2f}")
+                continue
 
 
-Q: 
+A: price = orderCheck(order_item)
+if price is not None:
+    total += price
+    print(f"Order Total: ${total:.2f}")
 
-
-A:
-
+total + price only calculates a value; total += price updates total. 
+Checking against None also lets you ignore items that weren’t found. 
+For that to work, make sure orderCheck returns the price using the 
+same title-cased key it checked in the menu.
 
 
 Q: 

@@ -20,7 +20,7 @@ menu = {
 
 def main():
     # Initialsing empty variable
-    total = 0.00
+    total: float = 0.00
     print("Welcome to Felipe’s Taqueria!")
     print("Here's our menu,")
     while True:
@@ -28,19 +28,24 @@ def main():
             for item, price in menu.items():
                 print(f"{item}: {price}")
             print("\n")
-            order = input("What would you like to order?\n")
+            order_item = input("What would you like to order?\n")
 
-            print(f"Order Total: ${total}")
+            price = orderCheck(order_item)
+            
+            if price is not None:
+                total += price
+                print(f"Order Total: ${total:.2f}")
+
         except EOFError:
-            return total
+            return f"${total:.2f}"
 
 
-def order_Item(ordered_item: str):
-    # Convert the ordered item string to 
-    # a reliable base state
-    ordered_item = ordered_item.lower()
+def orderCheck(ordered_item: str):
     # Titlecasing the variable for dictionary check
-    if ordered_item.title() in menu:
+    ordered_item = ordered_item.title()
+    # Checking the dicitonary for a matching entry and 
+    # returning it's price
+    if ordered_item in menu:
         return menu[ordered_item]
 
 main()
