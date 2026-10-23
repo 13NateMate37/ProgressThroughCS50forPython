@@ -1,0 +1,130 @@
+Q: without giving me the solution, what is the breakdwon of the logic for this
+problem within the docstring
+
+
+A: Here’s the logic breakdown for the problem in taqueria.py, without the 
+implementation:
+
+Start the order total at zero.
+
+Keep asking the user for one menu item at a time.
+
+Treat the input case-insensitively so capitalization doesn’t affect whether an 
+item is recognized.
+
+If the item is on the menu, add its price to the running total.
+
+After a recognized item, display the updated total with a dollar sign and 
+two decimal places.
+
+If the item isn’t on the menu, ignore it; don’t add anything to the total.
+
+When the user signals end-of-input with Control-D, stop asking for items cleanly
+
+
+
+Q: Under the format of having main call order_Item, where am i dividing which 
+parts of the logic to which function?
+
+
+A: A clean division is to have main control the order and order_Item handle one 
+item:
+
+main initializes the running total, repeatedly gets input, calls order_Item 
+for each item, updates the total when the item is valid, and displays the total. 
+
+It also handles Control-D to end the loop.
+
+order_Item receives one item, checks whether it matches a menu entry without 
+regard to capitalization, and provides the item’s price if it’s valid. For an 
+unrecognized item, it indicates that there’s no price to add.
+
+That keeps the repeated ordering and total display in main, while order_Item 
+focuses on interpreting a single entry.
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
+Q: 
+
+
+A:
+
+
+
