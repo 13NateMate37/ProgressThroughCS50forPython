@@ -19,10 +19,28 @@ menu = {
 }
 
 def main():
-    # Capture user input and loop until an EOFError
-    # Provided by the problem set
-    try:
-        order = input()
-    except EOFError:
+    # Initialsing empty variable
+    total = 0.00
+    print("Welcome to Felipe’s Taqueria!")
+    print("Here's our menu,")
+    while True:
+        try:
+            for item, price in menu.items():
+                print(f"{item}: {price}")
+            print("\n")
+            order = input("What would you like to order?\n")
 
-def order_Item():
+            print(f"Order Total: ${total}")
+        except EOFError:
+            return total
+
+
+def order_Item(ordered_item: str):
+    # Convert the ordered item string to 
+    # a reliable base state
+    ordered_item = ordered_item.lower()
+    # Titlecasing the variable for dictionary check
+    if ordered_item.title() in menu:
+        return menu[ordered_item]
+
+main()

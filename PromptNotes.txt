@@ -44,10 +44,16 @@ focuses on interpreting a single entry.
 
 
 
-Q: 
+Q: Is this the correct way to for loop through a dictionaires key values?
 
 
-A:
+A: Not quite. Iterating over a dictionary directly gives you keys only, so for 
+item, price in menu: tries to unpack each key into two values.
+
+To get both each key and its value, use the dictionary’s .items() method:
+
+
+
 
 
 
