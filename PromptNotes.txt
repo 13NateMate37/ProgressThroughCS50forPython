@@ -73,6 +73,104 @@ For that to work, make sure orderCheck returns the price using the
 same title-cased key it checked in the menu.
 
 
+Q: Without providing the solution straight up, what methods can i 
+use to display the user input untill they use EOFError?
+
+
+A: Keep your while True loop and put the input() call inside a try block.
+When input() raises EOFError, catch it and leave the loop. On Windows, EOF is usually Ctrl+Z, then Enter.
+For each item entered, update a dictionary: normalize the item’s case for matching, and increase its count. 
+That way repeated items are counted together.
+After the loop, sort the dictionary’s item names and print each name in uppercase with its count.
+One thing to check: input() accepts just one prompt string, so your current call with two separate 
+strings won’t work as written. You can combine the prompt text or display it separately.
+
+
+
+Q: So, how do I increase its current count? If it isn't in the dictionary, 
+what count should it start with?
+
+
+A: Use the item as the key and its number of entries as the value. If it's 
+already in the dictionary, add 1 to its current count. If it isn't there yet, 
+start its count at 1.
+
+The dict.get(key, 0) method returns the current value, or 0 if the key isn't 
+present. So this update handles both cases:
+
+grocery_list[item] = grocery_list.get(item, 0) + 1
+
+
+
+Q: Do I need to check if the item is in the dictionary first?
+
+
+A: You can check first. If the item is missing, add it with a count of 1. 
+Otherwise, increase its existing count by 1. Lowercase the item before this 
+check so differently capitalized entries count as the same item.
+
+
+
+Q: Or does this cover that?
+grocery_list[item] = grocery_list.get(item, 0) + 1
+
+
+A: Yes. This handles both cases, so you don't need a separate if statement:
+
+If item is already a key, .get() returns its current count. If it isn't, 
+.get() returns 0. Then + 1 sets the updated count.
+
+Keep item = item.lower() before this line so differently capitalized entries 
+count together.
+
+
+
+Q: In the format I've structured it, can you show me the solution?
+
+
+A: Here it is using your two-function structure and comments. The input prompt 
+is empty so the output contains only the formatted grocery list.
+
+```python
+def main():
+    # Initialise empty dictionary
+    grocery_list = {}
+
+    # Establishing a loop
+    while True:
+        # Establishing a try/except block
+        try:
+            # Capturing the user input
+            item = input()
+
+            # Controlling the input
+            item = item.lower()
+
+            # Add item to the dictionary
+            grocery_list[item] = grocery_list.get(item, 0) + 1
+        except EOFError:
+            return Processed_List(grocery_list)
+
+
+def Processed_List(input_dictionary: dict):
+    # Sorting the keys for alphabetical display
+    sorted_keys = sorted(input_dictionary)
+
+    # Looping through the sorted keys
+    for key in sorted_keys:
+        # Getting the count and uppercase item
+        count = input_dictionary[key]
+        item = key.upper()
+
+        # Printing the count followed by the item
+        print(f"{count} {item}")
+
+
+main()
+```
+
+
+
 Q: 
 
 
@@ -105,41 +203,4 @@ Q:
 
 
 A:
-
-
-
-Q: 
-
-
-A:
-
-
-
-Q: 
-
-
-A:
-
-
-
-Q: 
-
-
-A:
-
-
-
-Q: 
-
-
-A:
-
-
-
-Q: 
-
-
-A:
-
-
 

@@ -81,7 +81,8 @@ Starting to get the hang of using While and try for input looping. Slowly
 absorbing the practice.
 
 **Grocercy List**
-
+Handling dictionary key value pairs appears to be a weak point. The amount of time I've spent off
+of this probably hasn't helped. Still wrangling with my own internal consistency.
 
 **Outdated**
 
