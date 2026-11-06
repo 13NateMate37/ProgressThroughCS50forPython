@@ -178,6 +178,51 @@ A:
 
 
 
+Q: Can you help provide me the logic break to structure this code as the doc
+string instructs?
+
+
+A: Structure the program as a repeated parse-and-convert process:
+
+1. Keep prompting until the input can be parsed as one of the accepted formats.
+2. Decide which format was entered before splitting it:
+   - Numeric: 9/8/1636
+   - Month name: September 8, 1636
+3. Parse the date according to that format.
+4. Convert the month to a number if it was entered as a name.
+5. Format the result as YYYY-MM-DD.
+
+The two formats need different parsing because one uses slashes and the other
+uses spaces and a comma.
+
+
+Q: what would the first line of progress look like as starter code
+
+
+A: After reading the input, check which format it uses before splitting it:
+
+```python
+user_input = input("Date: ").strip()
+
+if "/" in user_input:
+    # Handle the numeric format
+else:
+    # Handle the month-name format
+```
+
+This is just the initial branching structure, not the complete solution.
+
+
+Q: As per the doc string im not required to validate an entry
+
+
+A: The docstring says not to validate whether a month has 28, 29, 30, or 31
+days. It still asks the program to prompt again if the input is not a valid
+date in either accepted format. So avoid calendar-specific checks, but make
+sure the input can be parsed and formatted as required.
+
+
+
 Q: 
 
 
@@ -203,4 +248,3 @@ Q:
 
 
 A:
-

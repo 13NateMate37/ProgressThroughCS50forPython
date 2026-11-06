@@ -85,7 +85,7 @@ Handling dictionary key value pairs appears to be a weak point. The amount of ti
 of this probably hasn't helped. Still wrangling with my own internal consistency.
 
 **Outdated**
-
+I have no idea how long it woulda taken me to figure out using the / to divide the logic flow. Feel quite stupid. 
 
 
 
