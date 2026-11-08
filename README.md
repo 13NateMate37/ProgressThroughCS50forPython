@@ -87,6 +87,11 @@ of this probably hasn't helped. Still wrangling with my own internal consistency
 **Outdated**
 I have no idea how long it woulda taken me to figure out using the / to divide the logic flow. Feel quite stupid. 
 
+I seemed to not quite get the logic flow for checking and reassigning values but it was 
+good practice. Was slightly annoyed when debugging errors Im unable to clock, githubs copilot kept pushing me towards solutions that don't work without rescripting the logic.
+
+
+
 
 
 

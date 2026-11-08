@@ -171,13 +171,6 @@ main()
 
 
 
-Q: 
-
-
-A:
-
-
-
 Q: Can you help provide me the logic break to structure this code as the doc
 string instructs?
 
@@ -223,24 +216,54 @@ sure the input can be parsed and formatted as required.
 
 
 
-Q: 
+Q: And now? (refering to debugging my code)
 
 
-A:
+A: Better! Your input parsing, range checks, and ValueError retry are in place. 
+Two small fixes remain in outdated.py:
+
+For an AD date, reject year 0 too: change year < 0 to year <= 0 in both checks.
+Since the assignment’s month-name format uses a comma after the day, 
+day = int(day.rstrip(",")) is clearer than the chain of strip() calls.
+return print(...) still displays the result, but returns None. 
+That’s fine if printing is all you need; to return the date string instead, 
+return the f-string from date_Formatter and print its result in main().
 
 
 
-Q: 
+Q: you keep saying this but you keep not considering that st nd rd and th are 
+common things to put after a number in a date
 
 
-A:
+A: You’re right—I kept focusing on the comma and treated st, nd, rd, and th as junk, 
+when they can be meaningful ordinal suffixes in dates. Sorry about that.
+
+If you want to accept dates like September 1st, 1636, remove the comma and then remove 
+an exact recognized suffix—not arbitrary characters with strip():
+
+day = day.rstrip(",")
+for suffix in ("st", "nd", "rd", "th"):
+    if day.endswith(suffix):
+        day = day.removesuffix(suffix)
+        break
+day = int(day)
+
+That keeps the suffix handling intentional. Your current chained strip() calls may 
+appear to work on examples like 1st, but strip("st") removes any combination of 
+s and t characters from either end; it doesn’t mean “remove the suffix st.”
 
 
+Q: what is rstrip?
 
-Q: 
 
+A: rstrip() returns a new string with specified characters removed from the right end. 
+If you give it no argument, it removes trailing whitespace.
 
-A:
+It removes any matching characters from the end—not a whole substring. 
+For example, "1st".rstrip("st") becomes "1" because it removes the trailing t and then s.
+
+For your date input, rstrip(",") removes the comma, but not an ordinal suffix. 
+To remove an exact suffix like "st", use removesuffix("st") (or check for the suffix first).
 
 
 
